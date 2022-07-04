@@ -1,0 +1,20 @@
+[velox]
+build_args = ['-trimpath', '-ldflags', '-s -X github.com/roadrunner-server/roadrunner/v2/internal/meta.version=v2.10.5 -X github.com/roadrunner-server/roadrunner/v2/internal/meta.buildTime=10:00:00']
+
+[roadrunner]
+ref = "v2.10.5"
+
+[github]
+[github.token]
+token = ""
+
+[github.plugins]
+# ref -> master, commit or tag
+logger = { ref = "master", owner = "roadrunner-server", repository = "logger" }
+server = { ref = "master", owner = "roadrunner-server", repository = "server" }
+http = { ref = "master", owner = "roadrunner-server", repository = "http" }
+my_custom_middleware = { ref = "master", owner = "roadrunner-server", repository = "middleware_sample", replace = "/middleware_sample" }
+
+[log]
+level = "info"
+mode = "development"

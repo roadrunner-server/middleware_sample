@@ -1,0 +1,13 @@
+version: '2.7'
+
+server:
+  command: "php worker.php"
+
+http:
+  address: 0.0.0.0:8080
+  my_middleware_config:
+    say_smt: "hello"
+
+logs:
+  level: debug
+  mode: development
